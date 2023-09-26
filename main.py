@@ -24,7 +24,7 @@ def bogo_sort(list, visualized=False, visualizer=''):
     if list == y:
       sorted = True
   return list
-listLen = 256
+listLen = 7
 lescreen = lv.screen('Bogus-sort', 720/listLen)
 lescreen.init_canvas(listLen)
 # lescreen.visualize_list([1,2,3,4,5,6,7,8,9,10])

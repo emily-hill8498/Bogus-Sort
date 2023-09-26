@@ -20,6 +20,6 @@ class screen:
       self.canvas.create_rectangle(i*self.MULS, self.height, (i+1)*self.MULS, self.height-list[i]*self.MULS, outline='', fill='white')
     self.canvas.pack()
     self.window.update()
-    # sleep(1)
+    # sleep(0.1)
 
 # print('test')
