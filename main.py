@@ -1,28 +1,6 @@
 from random import randint
-from time import sleep
-import tkinter
+import list_visual as lv
 
-
-class screen:
-  def __init__(self):
-    self.MULS = 50
-    self.window = tkinter.Tk()
-    self.window.title('Bogus-Sort')
-
-  def init_canvas(self, listSize):
-    self.width = listSize*self.MULS
-    self.height = listSize*self.MULS
-    self.canvas = tkinter.Canvas(self.window, width=self.width, height=self.height, bg='black')
-    self.canvas.pack()
-    self.window.update()
-    
-  def visualize_list(self, list):
-    self.canvas.delete('all')
-    for i in range(len(list)):
-      self.canvas.create_rectangle(i*self.MULS, self.height, (i+1)*self.MULS, self.height-list[i]*self.MULS, outline='', fill='white')
-    self.canvas.pack()
-    self.window.update()
-    # sleep(1)
 
 def gen_unsorted(len):
   list = []
@@ -46,13 +24,13 @@ def bogo_sort(list, visualized=False, visualizer=''):
     if list == y:
       sorted = True
   return list
-
-lescreen = screen()
-lescreen.init_canvas(15)
+listLen = 256
+lescreen = lv.screen('Bogus-sort', 720/listLen)
+lescreen.init_canvas(listLen)
 # lescreen.visualize_list([1,2,3,4,5,6,7,8,9,10])
 
 
-myList = gen_unsorted(15)
+myList = gen_unsorted(listLen)
 print(myList)
 myList = bogo_sort(myList, True, lescreen)
 print(myList)
