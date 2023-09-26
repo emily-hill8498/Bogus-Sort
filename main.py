@@ -48,11 +48,11 @@ def bogo_sort(list, visualized=False, visualizer=''):
   return list
 
 lescreen = screen()
-lescreen.init_canvas(5)
-lescreen.visualize_list([1,2,3,4,5,6,7,8,9,10])
+lescreen.init_canvas(15)
+# lescreen.visualize_list([1,2,3,4,5,6,7,8,9,10])
 
 
-myList = gen_unsorted(7)
+myList = gen_unsorted(15)
 print(myList)
 myList = bogo_sort(myList, True, lescreen)
 print(myList)
